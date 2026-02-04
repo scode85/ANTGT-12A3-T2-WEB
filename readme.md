@@ -170,8 +170,10 @@ Dự án phục vụ **mục đích giáo dục và tuyên truyền**, cho phép
 - **Nhóm**: Tổ 2 – Lớp 12A3
 - **Năm thực hiện**: 2026
 - **Liên hệ**: 0987 654 321
- Với sự tham gia :
- Mai Hoàng Tuấn
+
+Với sự tham gia :
+
+Mai Hoàng Tuấn
 
 Chu Thị Yến Nhi
 
