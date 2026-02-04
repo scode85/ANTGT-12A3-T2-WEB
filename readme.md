@@ -66,8 +66,8 @@
 
 ## 🛠️ Công nghệ sử dụng
 
-- **HTML5** – Xây dựng cấu trúc nội dung
-- **CSS3** – Giao diện, layout, animation
+- **HTML** – Xây dựng cấu trúc nội dung
+- **CSS** – Giao diện, layout, animation
 - **JavaScript (Vanilla)** – Xử lý tương tác
 - **Font Awesome 6.4.0** – Icon
 - **Google Fonts (Segoe UI)** – Typography
