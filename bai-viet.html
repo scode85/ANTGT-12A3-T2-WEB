@@ -1,0 +1,1020 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bài Viết và Tin Tức An Toàn Giao Thông</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* CSS chung từ trang chủ */
+        :root {
+            --primary-color: #1a73e8;
+            --secondary-color: #34a853;
+            --danger-color: #ea4335;
+            --warning-color: #fbbc04;
+            --dark-color: #202124;
+            --light-color: #f8f9fa;
+            --text-color: #333;
+            --gray-color: #5f6368;
+            --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            --transition: all 0.3s ease;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: #f5f7fa;
+        }
+        
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+        
+        ul {
+            list-style: none;
+        }
+        
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+        
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: var(--primary-color);
+            color: white;
+            border-radius: 4px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition);
+            border: none;
+        }
+        
+        .btn:hover {
+            background-color: #0d62d9;
+            transform: translateY(-2px);
+            box-shadow: var(--shadow);
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 40px;
+            color: var(--dark-color);
+            position: relative;
+        }
+        
+        .section-title::after {
+            content: '';
+            position: absolute;
+            width: 80px;
+            height: 4px;
+            background-color: var(--primary-color);
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            border-radius: 2px;
+        }
+        
+        /* Header */
+        header {
+            background-color: white;
+            box-shadow: var(--shadow);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        
+        .header-top {
+            background-color: var(--dark-color);
+            color: white;
+            padding: 10px 0;
+            font-size: 0.9rem;
+        }
+        
+        .header-top .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .social-icons a {
+            margin-left: 15px;
+            color: white;
+            font-size: 1.1rem;
+            transition: var(--transition);
+        }
+        
+        .social-icons a:hover {
+            color: var(--primary-color);
+        }
+        
+        .main-header {
+            padding: 15px 0;
+        }
+        
+        .logo-container {
+            display: flex;
+            align-items: center;
+        }
+        
+        .logo {
+            width: 60px;
+            height: 60px;
+            background-color: var(--primary-color);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 15px;
+            color: white;
+            font-size: 1.8rem;
+        }
+        
+        .logo-text h1 {
+            font-size: 1.8rem;
+            color: var(--primary-color);
+        }
+        
+        .logo-text p {
+            font-size: 0.9rem;
+            color: var(--gray-color);
+        }
+        
+        nav ul {
+            display: flex;
+        }
+        
+        nav ul li {
+            margin-left: 25px;
+        }
+        
+        nav ul li a {
+            font-weight: 600;
+            color: var(--dark-color);
+            transition: var(--transition);
+            padding: 5px 0;
+            position: relative;
+        }
+        
+        nav ul li a:hover, 
+        nav ul li a.active {
+            color: var(--primary-color);
+        }
+        
+        nav ul li a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 3px;
+            background-color: var(--primary-color);
+            bottom: 0;
+            left: 0;
+            transition: var(--transition);
+        }
+        
+        nav ul li a:hover::after,
+        nav ul li a.active::after {
+            width: 100%;
+        }
+        
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .mobile-menu-btn {
+            display: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: var(--dark-color);
+        }
+        
+        /* Page Header */
+        .page-header {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 60px 0;
+            text-align: center;
+        }
+        
+        .page-header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+        }
+        
+        .page-header p {
+            max-width: 800px;
+            margin: 0 auto;
+            font-size: 1.1rem;
+            opacity: 0.9;
+        }
+        
+        /* Page Content */
+        .page-content {
+            padding: 60px 0;
+        }
+        
+        /* Content with sidebar */
+        .content-with-sidebar {
+            display: grid;
+            grid-template-columns: 1fr 300px;
+            gap: 40px;
+        }
+        
+        /* Articles */
+        .articles-container {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+        }
+        
+        .article-item {
+            background-color: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+        }
+        
+        .article-item:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+        
+        .article-item.featured {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+        }
+        
+        .article-image {
+            height: 250px;
+            overflow: hidden;
+        }
+        
+        .article-item.featured .article-image {
+            height: 100%;
+        }
+        
+        .article-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+        
+        .article-item:hover .article-image img {
+            transform: scale(1.05);
+        }
+        
+        .article-content {
+            padding: 25px;
+        }
+        
+        .article-category {
+            display: inline-block;
+            padding: 5px 10px;
+            background-color: var(--primary-color);
+            color: white;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+        
+        .article-content h3 {
+            color: var(--dark-color);
+            margin-bottom: 15px;
+            font-size: 1.3rem;
+        }
+        
+        .article-content h3 a {
+            color: inherit;
+            text-decoration: none;
+            transition: var(--transition);
+        }
+        
+        .article-content h3 a:hover {
+            color: var(--primary-color);
+        }
+        
+        .article-content p {
+            margin-bottom: 15px;
+            color: var(--text-color);
+        }
+        
+        .article-meta {
+            display: flex;
+            justify-content: space-between;
+            color: var(--gray-color);
+            font-size: 0.9rem;
+            margin-top: 15px;
+            padding-top: 15px;
+            border-top: 1px solid #eee;
+        }
+        
+        /* News Ticker */
+        .news-ticker {
+            background-color: var(--danger-color);
+            color: white;
+            padding: 15px 0;
+            margin-bottom: 30px;
+            overflow: hidden;
+        }
+        
+        .ticker-container {
+            display: flex;
+            align-items: center;
+            white-space: nowrap;
+            animation: ticker 30s linear infinite;
+        }
+        
+        .ticker-label {
+            background-color: rgba(0, 0, 0, 0.2);
+            padding: 5px 15px;
+            font-weight: 600;
+            margin-right: 20px;
+            border-radius: 4px;
+        }
+        
+        .ticker-item {
+            margin-right: 40px;
+            font-weight: 500;
+        }
+        
+        @keyframes ticker {
+            0% {
+                transform: translateX(100%);
+            }
+            100% {
+                transform: translateX(-100%);
+            }
+        }
+        
+        /* Sidebar */
+        .sidebar {
+            display: flex;
+            flex-direction: column;
+            gap: 30px;
+        }
+        
+        .sidebar-widget {
+            background-color: white;
+            border-radius: 8px;
+            padding: 25px;
+            box-shadow: var(--shadow);
+        }
+        
+        .sidebar-widget h3 {
+            color: var(--primary-color);
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+            border-bottom: 2px solid #eee;
+        }
+        
+        .trending-articles, .popular-categories {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+        }
+        
+        .trending-article {
+            display: flex;
+            gap: 15px;
+            padding-bottom: 15px;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .trending-article:last-child {
+            padding-bottom: 0;
+            border-bottom: none;
+        }
+        
+        .trending-article-image {
+            width: 80px;
+            height: 60px;
+            flex-shrink: 0;
+            border-radius: 4px;
+            overflow: hidden;
+        }
+        
+        .trending-article-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .trending-article-content h4 {
+            font-size: 0.9rem;
+            color: var(--dark-color);
+            margin-bottom: 5px;
+        }
+        
+        .trending-article-content h4 a {
+            color: inherit;
+            text-decoration: none;
+            transition: var(--transition);
+        }
+        
+        .trending-article-content h4 a:hover {
+            color: var(--primary-color);
+        }
+        
+        .trending-article-meta {
+            color: var(--gray-color);
+            font-size: 0.8rem;
+        }
+        
+        .category-list li {
+            margin-bottom: 10px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .category-list li:last-child {
+            margin-bottom: 0;
+            padding-bottom: 0;
+            border-bottom: none;
+        }
+        
+        .category-list a {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 8px 0;
+            transition: var(--transition);
+        }
+        
+        .category-list a:hover {
+            color: var(--primary-color);
+            padding-left: 5px;
+        }
+        
+        .category-count {
+            background-color: #f0f7ff;
+            color: var(--primary-color);
+            padding: 2px 8px;
+            border-radius: 10px;
+            font-size: 0.8rem;
+        }
+        
+        /* Pagination */
+        .pagination {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            gap: 10px;
+            margin-top: 50px;
+        }
+        
+        .pagination a {
+            width: 40px;
+            height: 40px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: white;
+            border-radius: 4px;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+        }
+        
+        .pagination a:hover, .pagination a.active {
+            background-color: var(--primary-color);
+            color: white;
+        }
+        
+        /* Footer */
+        footer {
+            background-color: var(--dark-color);
+            color: white;
+            padding: 60px 0 20px;
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+        
+        .footer-column h3 {
+            font-size: 1.3rem;
+            margin-bottom: 20px;
+            color: white;
+            position: relative;
+            padding-bottom: 10px;
+        }
+        
+        .footer-column h3::after {
+            content: '';
+            position: absolute;
+            width: 40px;
+            height: 3px;
+            background-color: var(--primary-color);
+            bottom: 0;
+            left: 0;
+        }
+        
+        .footer-links li {
+            margin-bottom: 10px;
+        }
+        
+        .footer-links a {
+            transition: var(--transition);
+            color: #ddd;
+        }
+        
+        .footer-links a:hover {
+            color: var(--primary-color);
+            padding-left: 5px;
+        }
+        
+        .contact-info li {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 15px;
+            color: #ddd;
+        }
+        
+        .contact-info i {
+            margin-right: 10px;
+            color: var(--primary-color);
+            margin-top: 5px;
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid #444;
+            color: #aaa;
+            font-size: 0.9rem;
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 992px) {
+            .content-with-sidebar {
+                grid-template-columns: 1fr;
+            }
+            
+            .article-item.featured {
+                grid-template-columns: 1fr;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .mobile-menu-btn {
+                display: block;
+            }
+            
+            nav {
+                position: fixed;
+                top: 0;
+                right: -100%;
+                width: 250px;
+                height: 100vh;
+                background-color: white;
+                box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
+                transition: var(--transition);
+                z-index: 1001;
+                padding-top: 80px;
+            }
+            
+            nav.active {
+                right: 0;
+            }
+            
+            nav ul {
+                flex-direction: column;
+                padding: 0 20px;
+            }
+            
+            nav ul li {
+                margin: 0 0 20px 0;
+            }
+            
+            .header-content {
+                justify-content: space-between;
+            }
+            
+            .page-header h1 {
+                font-size: 2rem;
+            }
+            
+            .news-ticker {
+                font-size: 0.9rem;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .page-header {
+                padding: 40px 0;
+            }
+            
+            .page-content {
+                padding: 40px 0;
+            }
+            
+            .article-content {
+                padding: 20px;
+            }
+            
+            .sidebar-widget {
+                padding: 20px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="header-top">
+            <div class="container">
+                <div class="header-top-text">Thực hiện văn hóa giao thông - Vì sự an toàn của chính bạn và cộng đồng</div>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                    <a href="#"><i class="fab fa-tiktok"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="main-header">
+            <div class="container header-content">
+                <div class="logo-container">
+                    <div class="logo">
+                        <i class="fas fa-traffic-light"></i>
+                    </div>
+                    <div class="logo-text">
+                        <h1>ATGT Việt Nam</h1>
+                        <p>An toàn giao thông - Trách nhiệm mỗi người</p>
+                    </div>
+                </div>
+                
+                <div class="mobile-menu-btn" id="mobileMenuBtn">
+                    <i class="fas fa-bars"></i>
+                </div>
+                
+                <nav id="mainNav">
+                    <ul>
+                        <li><a href="index.html">Trang chủ</a></li>
+                        <li><a href="bai-van.html">Bài văn</a></li>
+                        <li><a href="phap-luat.html">Pháp luật</a></li>
+                        <li><a href="khoa-hoc.html">Khoa học</a></li>
+                        <li><a href="video.html">Video</a></li>
+                        <li><a href="bai-viet.html" class="active">Bài viết</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- News Ticker -->
+    <div class="news-ticker">
+        <div class="ticker-container">
+            <div class="ticker-label">TIN MỚI</div>
+            <div class="ticker-item">Hà Nội: Triển khai hệ thống camera giám sát vi phạm tốc độ tại 20 tuyến đường trọng điểm</div>
+            <div class="ticker-item">Từ 1/11/2023: Tăng mức xử phạt hành vi không đội mũ bảo hiểm cho trẻ em</div>
+            <div class="ticker-item">TP.HCM lắp đặt thêm 500 trụ đèn tín hiệu giao thông thông minh</div>
+            <div class="ticker-item">Thống kê 9 tháng đầu năm: Tai nạn giao thông giảm 15% so với cùng kỳ</div>
+        </div>
+    </div>
+
+    <!-- Page Header -->
+    <section class="page-header">
+        <div class="container">
+            <h1>Bài Viết và Tin Tức An Toàn Giao Thông</h1>
+            <p>Cập nhật tin tức mới nhất, bài phân tích chuyên sâu và các bài viết về an toàn giao thông từ các chuyên gia</p>
+        </div>
+    </section>
+
+    <!-- Page Content -->
+    <section class="page-content">
+        <div class="container">
+            <div class="content-with-sidebar">
+                <div class="articles-container">
+                    <div class="article-item featured">
+                        <div class="article-image">
+                            <img src="https://images.unsplash.com/photo-1599159340657-b0d168e6df4a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Bài viết nổi bật">
+                        </div>
+                        <div class="article-content">
+                            <span class="article-category">Phân tích</span>
+                            <h3><a href="https://tuoitre.vn/thuc-trang-an-toan-giao-thong-viet-nam-9-thang-dau-nam-2023-20231018093858418.htm" target="_blank">Thực trạng an toàn giao thông Việt Nam 9 tháng đầu năm 2023: Tiến bộ và thách thức</a></h3>
+                            <p>Phân tích chi tiết số liệu thống kê tai nạn giao thông, đánh giá hiệu quả các biện pháp can thiệp và đề xuất giải pháp cho những tháng cuối năm.</p>
+                            <div class="article-meta">
+                                <span><i class="far fa-user"></i> PGS.TS. Nguyễn Văn Minh</span>
+                                <span><i class="far fa-calendar"></i> 18/10/2023</span>
+                            </div>
+                            <a href="https://tuoitre.vn/thuc-trang-an-toan-giao-thong-viet-nam-9-thang-dau-nam-2023-20231018093858418.htm" target="_blank" class="btn" style="margin-top: 15px; display: inline-block;">Đọc tiếp</a>
+                        </div>
+                    </div>
+                    
+                    <div class="article-item">
+                        <div class="article-image">
+                            <img src="https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Bài viết 2">
+                        </div>
+                        <div class="article-content">
+                            <span class="article-category">Tin tức</span>
+                            <h3><a href="https://vnexpress.net/ha-noi-thu-nghiem-camera-ai-phat-hien-vi-pham-giao-thong-4671041.html" target="_blank">Hà Nội triển khai thí điểm hệ thống camera AI phát hiện vi phạm giao thông</a></h3>
+                            <p>Từ tháng 11/2023, Hà Nội sẽ lắp đặt hệ thống camera ứng dụng trí tuệ nhân tạo tại 10 nút giao thông trọng điểm để tự động phát hiện các vi phạm.</p>
+                            <div class="article-meta">
+                                <span><i class="far fa-user"></i> Phóng viên Minh Anh</span>
+                                <span><i class="far fa-calendar"></i> 17/10/2023</span>
+                            </div>
+                            <a href="https://vnexpress.net/ha-noi-thu-nghiem-camera-ai-phat-hien-vi-pham-giao-thong-4671041.html" target="_blank" class="btn" style="margin-top: 15px; display: inline-block;">Đọc tiếp</a>
+                        </div>
+                    </div>
+                    
+                    <div class="article-item">
+                        <div class="article-image">
+                            <img src="https://images.unsplash.com/photo-1549399542-7e3f8b79c341?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Bài viết 3">
+                        </div>
+                        <div class="article-content">
+                            <span class="article-category">Giáo dục</span>
+                            <h3><a href="https://thanhnien.vn/giao-duc-an-toan-giao-thong-vao-chuong-trinh-chinh-khoa-tu-cap-tieu-hoc-18523101520030876.htm" target="_blank">Đưa giáo dục an toàn giao thông vào chương trình chính khóa từ cấp tiểu học</a></h3>
+                            <p>Bộ GD&ĐT đang xây dựng đề án đưa nội dung giáo dục an toàn giao thông vào chương trình chính khóa từ lớp 1 đến lớp 12.</p>
+                            <div class="article-meta">
+                                <span><i class="far fa-user"></i> ThS. Trần Thị Lan</span>
+                                <span><i class="far fa-calendar"></i> 15/10/2023</span>
+                            </div>
+                            <a href="https://thanhnien.vn/giao-duc-an-toan-giao-thong-vao-chuong-trinh-chinh-khoa-tu-cap-tieu-hoc-18523101520030876.htm" target="_blank" class="btn" style="margin-top: 15px; display: inline-block;">Đọc tiếp</a>
+                        </div>
+                    </div>
+                    
+                    <div class="article-item">
+                        <div class="article-image">
+                            <img src="https://images.unsplash.com/photo-1581094794329-c8112a89af12?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Bài viết 4">
+                        </div>
+                        <div class="article-content">
+                            <span class="article-category">Công nghệ</span>
+                            <h3><a href="https://cafef.vn/ung-dung-canh-bao-diem-den-tai-nan-giao-thong-tren-dien-thoai-thong-minh-20231014095846333.chn" target="_blank">Ứng dụng cảnh báo điểm đen tai nạn giao thông trên điện thoại thông minh</a></h3>
+                            <p>Một startup Việt Nam vừa ra mắt ứng dụng di động cảnh báo người dùng khi đến gần các điểm đen tai nạn giao thông dựa trên dữ liệu thực tế.</p>
+                            <div class="article-meta">
+                                <span><i class="far fa-user"></i> Kỹ sư Lê Hoàng</span>
+                                <span><i class="far fa-calendar"></i> 14/10/2023</span>
+                            </div>
+                            <a href="https://cafef.vn/ung-dung-canh-bao-diem-den-tai-nan-giao-thong-tren-dien-thoai-thong-minh-20231014095846333.chn" target="_blank" class="btn" style="margin-top: 15px; display: inline-block;">Đọc tiếp</a>
+                        </div>
+                    </div>
+                    
+                    <div class="article-item">
+                        <div class="article-image">
+                            <img src="https://images.unsplash.com/photo-1551524165-6b6e5a6166f3?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Bài viết 5">
+                        </div>
+                        <div class="article-content">
+                            <span class="article-category">Pháp luật</span>
+                            <h3><a href="https://vtc.vn/tang-cuong-xu-ly-vi-pham-nong-do-con-trong-dip-cuoi-nam-ar858961.html" target="_blank">Tăng cường xử lý vi phạm nồng độ cồn trong dịp cuối năm</a></h3>
+                            <p>Cảnh sát giao thông toàn quốc sẽ tăng cường tuần tra, kiểm soát và xử lý nghiêm các vi phạm về nồng độ cồn trong các tháng cuối năm 2023.</p>
+                            <div class="article-meta">
+                                <span><i class="far fa-user"></i> PV. Văn Tú</span>
+                                <span><i class="far fa-calendar"></i> 12/10/2023</span>
+                            </div>
+                            <a href="https://vtc.vn/tang-cuong-xu-ly-vi-pham-nong-do-con-trong-dip-cuoi-nam-ar858961.html" target="_blank" class="btn" style="margin-top: 15px; display: inline-block;">Đọc tiếp</a>
+                        </div>
+                    </div>
+                    
+                    <div class="article-item">
+                        <div class="article-image">
+                            <img src="https://images.unsplash.com/photo-1542838135-2e7e6c3f4d5f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Bài viết 6">
+                        </div>
+                        <div class="article-content">
+                            <span class="article-category">Kinh nghiệm</span>
+                            <h3><a href="https://laodong.vn/xe/10-ky-nang-lai-xe-an-toan-ma-moi-tai-xe-can-biet-1240814.ldo" target="_blank">10 kỹ năng lái xe an toàn mà mọi tài xế cần biết</a></h3>
+                            <p>Tổng hợp những kỹ năng quan trọng giúp người lái xe xử lý tốt các tình huống nguy hiểm và phòng tránh tai nạn giao thông.</p>
+                            <div class="article-meta">
+                                <span><i class="far fa-user"></i> HLV. Nguyễn Văn Tài</span>
+                                <span><i class="far fa-calendar"></i> 10/10/2023</span>
+                            </div>
+                            <a href="https://laodong.vn/xe/10-ky-nang-lai-xe-an-toan-ma-moi-tai-xe-can-biet-1240814.ldo" target="_blank" class="btn" style="margin-top: 15px; display: inline-block;">Đọc tiếp</a>
+                        </div>
+                    </div>
+                    
+                    <div class="article-item">
+                        <div class="article-image">
+                            <img src="https://images.unsplash.com/photo-1511919884-6c6f8a1681e5?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Bài viết 7">
+                        </div>
+                        <div class="article-content">
+                            <span class="article-category">Văn hóa giao thông</span>
+                            <h3><a href="https://nhandan.vn/van-hoa-giao-thong-la-gi-va-vi-sao-can-xay-dung-post749651.html" target="_blank">Văn hóa giao thông là gì và vì sao cần xây dựng?</a></h3>
+                            <p>Bài viết phân tích khái niệm văn hóa giao thông, những biểu hiện cụ thể và lợi ích của việc xây dựng văn hóa giao thông trong cộng đồng.</p>
+                            <div class="article-meta">
+                                <span><i class="far fa-user"></i> TS. Trần Minh Đức</span>
+                                <span><i class="far fa-calendar"></i> 08/10/2023</span>
+                            </div>
+                            <a href="https://nhandan.vn/van-hoa-giao-thong-la-gi-va-vi-sao-can-xay-dung-post749651.html" target="_blank" class="btn" style="margin-top: 15px; display: inline-block;">Đọc tiếp</a>
+                        </div>
+                    </div>
+                    
+                    <div class="article-item">
+                        <div class="article-image">
+                            <img src="https://images.unsplash.com/photo-1533473359331-0135ef1b58bf?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Bài viết 8">
+                        </div>
+                        <div class="article-content">
+                            <span class="article-category">Công nghệ</span>
+                            <h3><a href="https://zingnews.vn/xe-tu-lai-va-tuong-lai-giao-thong-thong-minh-post1459113.html" target="_blank">Xe tự lái và tương lai giao thông thông minh</a></h3>
+                            <p>Công nghệ xe tự lái đang phát triển nhanh chóng và hứa hẹn thay đổi hoàn toàn bộ mặt giao thông trong tương lai gần.</p>
+                            <div class="article-meta">
+                                <span><i class="far fa-user"></i> Chuyên gia Nguyễn Thanh Hải</span>
+                                <span><i class="far fa-calendar"></i> 05/10/2023</span>
+                            </div>
+                            <a href="https://zingnews.vn/xe-tu-lai-va-tuong-lai-giao-thong-thong-minh-post1459113.html" target="_blank" class="btn" style="margin-top: 15px; display: inline-block;">Đọc tiếp</a>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="sidebar">
+                    <div class="sidebar-widget">
+                        <h3>Bài viết nổi bật</h3>
+                        <div class="trending-articles">
+                            <div class="trending-article">
+                                <div class="trending-article-image">
+                                    <img src="https://images.unsplash.com/photo-1599159340657-b0d168e6df4a?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Bài nổi bật 1">
+                                </div>
+                                <div class="trending-article-content">
+                                    <h4><a href="https://tuoitre.vn/thuc-trang-an-toan-giao-thong-viet-nam-9-thang-dau-nam-2023-20231018093858418.htm" target="_blank">Thực trạng ATGT Việt Nam 9 tháng đầu năm 2023</a></h4>
+                                    <div class="trending-article-meta">18/10/2023 • 2.5K lượt xem</div>
+                                </div>
+                            </div>
+                            
+                            <div class="trending-article">
+                                <div class="trending-article-image">
+                                    <img src="https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Bài nổi bật 2">
+                                </div>
+                                <div class="trending-article-content">
+                                    <h4><a href="https://vnexpress.net/ha-noi-thu-nghiem-camera-ai-phat-hien-vi-pham-giao-thong-4671041.html" target="_blank">Camera AI phát hiện vi phạm giao thông tại Hà Nội</a></h4>
+                                    <div class="trending-article-meta">17/10/2023 • 1.8K lượt xem</div>
+                                </div>
+                            </div>
+                            
+                            <div class="trending-article">
+                                <div class="trending-article-image">
+                                    <img src="https://images.unsplash.com/photo-1549399542-7e3f8b79c341?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Bài nổi bật 3">
+                                </div>
+                                <div class="trending-article-content">
+                                    <h4><a href="https://thanhnien.vn/giao-duc-an-toan-giao-thong-vao-chuong-trinh-chinh-khoa-tu-cap-tieu-hoc-18523101520030876.htm" target="_blank">Giáo dục ATGT vào chương trình chính khóa</a></h4>
+                                    <div class="trending-article-meta">15/10/2023 • 1.2K lượt xem</div>
+                                </div>
+                            </div>
+                            
+                            <div class="trending-article">
+                                <div class="trending-article-image">
+                                    <img src="https://images.unsplash.com/photo-1581094794329-c8112a89af12?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2070&q=80" alt="Bài nổi bật 4">
+                                </div>
+                                <div class="trending-article-content">
+                                    <h4><a href="https://cafef.vn/ung-dung-canh-bao-diem-den-tai-nan-giao-thong-tren-dien-thoai-thong-minh-20231014095846333.chn" target="_blank">Ứng dụng cảnh báo điểm đen tai nạn giao thông</a></h4>
+                                    <div class="trending-article-meta">14/10/2023 • 2.1K lượt xem</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="sidebar-widget">
+                        <h3>Chuyên mục</h3>
+                        <ul class="category-list">
+                            <li><a href="#">Tin tức <span class="category-count">24</span></a></li>
+                            <li><a href="#">Phân tích <span class="category-count">18</span></a></li>
+                            <li><a href="#">Giáo dục <span class="category-count">15</span></a></li>
+                            <li><a href="#">Công nghệ <span class="category-count">22</span></a></li>
+                            <li><a href="#">Pháp luật <span class="category-count">20</span></a></li>
+                            <li><a href="#">Kinh nghiệm <span class="category-count">16</span></a></li>
+                            <li><a href="#">Quốc tế <span class="category-count">12</span></a></li>
+                            <li><a href="#">Văn hóa giao thông <span class="category-count">14</span></a></li>
+                        </ul>
+                    </div>
+                    
+                    <div class="sidebar-widget">
+                        <h3>Đăng ký nhận tin</h3>
+                        <p>Nhận tin tức mới nhất về an toàn giao thông qua email</p>
+                        <form style="margin-top: 15px;">
+                            <input type="email" placeholder="Địa chỉ email của bạn" style="width: 100%; padding: 10px; margin-bottom: 10px; border: 1px solid #ddd; border-radius: 4px;">
+                            <button type="submit" class="btn" style="width: 100%;">Đăng ký</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="pagination">
+                <a href="#" class="active">1</a>
+                <a href="#">2</a>
+                <a href="#">3</a>
+                <a href="#">4</a>
+                <a href="#">5</a>
+                <a href="#"><i class="fas fa-chevron-right"></i></a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>Về chúng tôi</h3>
+                    <p>Trang web cung cấp thông tin, kiến thức về an toàn giao thông, nhằm nâng cao ý thức và trách nhiệm của mỗi người khi tham gia giao thông.</p>
+                    <div class="social-icons" style="margin-top: 20px;">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                        <a href="#"><i class="fab fa-tiktok"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Liên kết nhanh</h3>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Trang chủ</a></li>
+                        <li><a href="bai-van.html">Bài văn về ATGT</a></li>
+                        <li><a href="phap-luat.html">Luật giao thông đường bộ</a></li>
+                        <li><a href="khoa-hoc.html">Công nghệ ATGT</a></li>
+                        <li><a href="video.html">Video tuyên truyền</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Liên hệ</h3>
+                    <ul class="contact-info">
+                        <li><i class="fas fa-map-marker-alt"></i> Tổ2 -12A3</li>
+                        <li><i class="fas fa-phone"></i> 0987654321</li>
+                        <li><i class="fas fa-envelope"></i> ....</li>
+                        <li><i class="fas fa-clock"></i> Thứ 2 - Thứ 6: 8:00 - 17:00</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                <p>&copy; 2026 An Toàn Giao Thông Việt Nam. Tất cả các quyền được bảo lưu.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const mainNav = document.getElementById('mainNav');
+        
+        mobileMenuBtn.addEventListener('click', () => {
+            mainNav.classList.toggle('active');
+        });
+        
+        // Close mobile menu when clicking on a link
+        const navLinks = document.querySelectorAll('nav a');
+        navLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mainNav.classList.remove('active');
+            });
+        });
+        
+        // Highlight active page in navigation
+        const currentPage = window.location.pathname.split('/').pop();
+        navLinks.forEach(link => {
+            const linkPage = link.getAttribute('href');
+            if (linkPage === currentPage) {
+                link.classList.add('active');
+            } else {
+                link.classList.remove('active');
+            }
+        });
+        
+        // Newsletter form submission
+        const newsletterForm = document.querySelector('form');
+        newsletterForm.addEventListener('submit', (e) => {
+            e.preventDefault();
+            const email = newsletterForm.querySelector('input[type="email"]').value;
+            if (email) {
+                alert(`Cảm ơn bạn đã đăng ký nhận tin với email: ${email}. Bạn sẽ nhận được tin tức mới nhất về an toàn giao thông.`);
+                newsletterForm.reset();
+            } else {
+                alert('Vui lòng nhập địa chỉ email của bạn.');
+            }
+        });
+        
+        // Pagination click handler
+        const paginationLinks = document.querySelectorAll('.pagination a');
+        paginationLinks.forEach(link => {
+            link.addEventListener('click', (e) => {
+                e.preventDefault();
+                paginationLinks.forEach(l => l.classList.remove('active'));
+                link.classList.add('active');
+                alert('Trong phiên bản đầy đủ, trang mới sẽ được tải.');
+            });
+        });
+    </script>
+</body>
+</html>

@@ -1,0 +1,1331 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>An Toàn Giao Thông - Vì Một Tương Lai An Toàn</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Reset và biến CSS */
+        :root {
+            --primary-color: #1a73e8;
+            --secondary-color: #34a853;
+            --danger-color: #ea4335;
+            --warning-color: #fbbc04;
+            --dark-color: #202124;
+            --light-color: #f8f9fa;
+            --text-color: #333;
+            --gray-color: #5f6368;
+            --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            --transition: all 0.3s ease;
+        }
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: #f5f7fa;
+        }
+        
+        a {
+            text-decoration: none;
+            color: inherit;
+        }
+        
+        ul {
+            list-style: none;
+        }
+        
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+        
+        .container {
+            width: 100%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 20px;
+        }
+        
+        .btn {
+            display: inline-block;
+            padding: 10px 20px;
+            background-color: var(--primary-color);
+            color: white;
+            border-radius: 4px;
+            font-weight: 600;
+            cursor: pointer;
+            transition: var(--transition);
+            border: none;
+        }
+        
+        .btn:hover {
+            background-color: #0d62d9;
+            transform: translateY(-2px);
+            box-shadow: var(--shadow);
+        }
+        
+        .btn-secondary {
+            background-color: var(--secondary-color);
+        }
+        
+        .btn-secondary:hover {
+            background-color: #2a8a46;
+        }
+        
+        .section-title {
+            text-align: center;
+            margin-bottom: 40px;
+            color: var(--dark-color);
+            position: relative;
+        }
+        
+        .section-title::after {
+            content: '';
+            position: absolute;
+            width: 80px;
+            height: 4px;
+            background-color: var(--primary-color);
+            bottom: -10px;
+            left: 50%;
+            transform: translateX(-50%);
+            border-radius: 2px;
+        }
+        
+        /* Header */
+        header {
+            background-color: white;
+            box-shadow: var(--shadow);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+        
+        .header-top {
+            background-color: var(--dark-color);
+            color: white;
+            padding: 10px 0;
+            font-size: 0.9rem;
+        }
+        
+        .header-top .container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .social-icons a {
+            margin-left: 15px;
+            color: white;
+            font-size: 1.1rem;
+            transition: var(--transition);
+        }
+        
+        .social-icons a:hover {
+            color: var(--primary-color);
+        }
+        
+        .main-header {
+            padding: 15px 0;
+        }
+        
+        .logo-container {
+            display: flex;
+            align-items: center;
+        }
+        
+        .logo {
+            width: 60px;
+            height: 60px;
+            background-color: var(--primary-color);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-right: 15px;
+            color: white;
+            font-size: 1.8rem;
+        }
+        
+        .logo-text h1 {
+            font-size: 1.8rem;
+            color: var(--primary-color);
+        }
+        
+        .logo-text p {
+            font-size: 0.9rem;
+            color: var(--gray-color);
+        }
+        
+        nav ul {
+            display: flex;
+        }
+        
+        nav ul li {
+            margin-left: 25px;
+        }
+        
+        nav ul li a {
+            font-weight: 600;
+            color: var(--dark-color);
+            transition: var(--transition);
+            padding: 5px 0;
+            position: relative;
+        }
+        
+        nav ul li a:hover, 
+        nav ul li a.active {
+            color: var(--primary-color);
+        }
+        
+        nav ul li a::after {
+            content: '';
+            position: absolute;
+            width: 0;
+            height: 3px;
+            background-color: var(--primary-color);
+            bottom: 0;
+            left: 0;
+            transition: var(--transition);
+        }
+        
+        nav ul li a:hover::after,
+        nav ul li a.active::after {
+            width: 100%;
+        }
+        
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+        
+        .mobile-menu-btn {
+            display: none;
+            font-size: 1.5rem;
+            cursor: pointer;
+            color: var(--dark-color);
+        }
+        
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url('https://images.unsplash.com/photo-1544620347-c4fd4a3d5957?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=2069&q=80');
+            background-size: cover;
+            background-position: center;
+            color: white;
+            text-align: center;
+            padding: 100px 0;
+        }
+        
+        .hero h2 {
+            font-size: 2.8rem;
+            margin-bottom: 20px;
+        }
+        
+        .hero p {
+            font-size: 1.2rem;
+            max-width: 800px;
+            margin: 0 auto 30px;
+            opacity: 0.9;
+        }
+        
+        /* Main Content */
+        .main-content {
+            padding: 80px 0;
+        }
+        
+        /* Features Section */
+        .features {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 30px;
+            margin-bottom: 80px;
+        }
+        
+        .feature-card {
+            background-color: white;
+            border-radius: 8px;
+            padding: 30px;
+            text-align: center;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+        }
+        
+        .feature-card:hover {
+            transform: translateY(-10px);
+        }
+        
+        .feature-icon {
+            width: 70px;
+            height: 70px;
+            background-color: rgba(26, 115, 232, 0.1);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            color: var(--primary-color);
+            font-size: 1.8rem;
+        }
+        
+        .feature-card h3 {
+            margin-bottom: 15px;
+            color: var(--dark-color);
+        }
+        
+        /* Posts Section */
+        .posts-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 30px;
+            margin-bottom: 80px;
+        }
+        
+        .post-card {
+            background-color: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+        }
+        
+        .post-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+        
+        .post-image {
+            height: 200px;
+            overflow: hidden;
+        }
+        
+        .post-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: var(--transition);
+        }
+        
+        .post-card:hover .post-image img {
+            transform: scale(1.05);
+        }
+        
+        .post-content {
+            padding: 20px;
+        }
+        
+        .post-category {
+            display: inline-block;
+            padding: 5px 10px;
+            background-color: var(--primary-color);
+            color: white;
+            border-radius: 4px;
+            font-size: 0.8rem;
+            font-weight: 600;
+            margin-bottom: 10px;
+        }
+        
+        .post-content h3 {
+            margin-bottom: 10px;
+            color: var(--dark-color);
+        }
+        
+        .post-meta {
+            display: flex;
+            justify-content: space-between;
+            color: var(--gray-color);
+            font-size: 0.9rem;
+            margin-top: 15px;
+            padding-top: 15px;
+            border-top: 1px solid #eee;
+        }
+        
+        
+        .videos-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 30px;
+            margin-bottom: 80px;
+        }
+        
+        .video-card {
+            background-color: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+        }
+        
+        .video-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.15);
+        }
+        
+        .video-thumbnail {
+            position: relative;
+            height: 180px;
+            overflow: hidden;
+            background-color: #000;
+        }
+        
+        .video-thumbnail video {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+        
+        .video-thumbnail img.poster {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            position: absolute;
+            top: 0;
+            left: 0;
+            z-index: 1;
+            transition: opacity 0.3s ease;
+        }
+        
+        .video-thumbnail img.poster.hidden {
+            opacity: 0;
+            pointer-events: none;
+        }
+        
+        .play-btn {
+            position: absolute;
+            top: 50%;
+            left: 50%;
+            transform: translate(-50%, -50%);
+            width: 50px;
+            height: 50px;
+            background-color: rgba(0, 0, 0, 0.7);
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+            font-size: 1.2rem;
+            cursor: pointer;
+            transition: var(--transition);
+            z-index: 2;
+        }
+        
+        .play-btn:hover {
+            background-color: var(--primary-color);
+            transform: translate(-50%, -50%) scale(1.1);
+        }
+        
+        .play-btn.playing {
+            opacity: 0;
+            pointer-events: none;
+        }
+        
+        .video-controls {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(transparent, rgba(0,0,0,0.7));
+            padding: 10px;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            z-index: 3;
+        }
+        
+        .video-thumbnail:hover .video-controls {
+            opacity: 1;
+        }
+        
+        .video-controls button {
+            background: none;
+            border: none;
+            color: white;
+            font-size: 1.2rem;
+            cursor: pointer;
+            margin: 0 5px;
+        }
+        
+        .video-progress {
+            flex-grow: 1;
+            height: 4px;
+            background-color: rgba(255, 255, 255, 0.3);
+            margin: 0 10px;
+            border-radius: 2px;
+            overflow: hidden;
+            cursor: pointer;
+        }
+        
+        .video-progress-filled {
+            height: 100%;
+            background-color: var(--primary-color);
+            width: 0%;
+        }
+        
+        .video-content {
+            padding: 20px;
+        }
+        
+        .video-content h3 {
+            margin-bottom: 10px;
+            color: var(--dark-color);
+        }
+        
+        /* Video Modal */
+        .video-modal {
+            display: none;
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.9);
+            z-index: 2000;
+            align-items: center;
+            justify-content: center;
+        }
+        
+        .video-modal.active {
+            display: flex;
+        }
+        
+        .modal-content {
+            width: 90%;
+            max-width: 800px;
+            background-color: #000;
+            border-radius: 8px;
+            overflow: hidden;
+            position: relative;
+        }
+        
+        .modal-video {
+            width: 100%;
+            height: auto;
+            display: block;
+        }
+        
+        .modal-close {
+            position: absolute;
+            top: 15px;
+            right: 15px;
+            background-color: rgba(0, 0, 0, 0.5);
+            color: white;
+            border: none;
+            width: 40px;
+            height: 40px;
+            border-radius: 50%;
+            font-size: 1.5rem;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            z-index: 10;
+        }
+        
+        .modal-close:hover {
+            background-color: var(--primary-color);
+        }
+        
+        .modal-video-title {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            background: linear-gradient(transparent, rgba(0,0,0,0.8));
+            color: white;
+            padding: 20px;
+        }
+        
+        /* Footer */
+        footer {
+            background-color: var(--dark-color);
+            color: white;
+            padding: 60px 0 20px;
+        }
+        
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 40px;
+        }
+        
+        .footer-column h3 {
+            font-size: 1.3rem;
+            margin-bottom: 20px;
+            color: white;
+            position: relative;
+            padding-bottom: 10px;
+        }
+        
+        .footer-column h3::after {
+            content: '';
+            position: absolute;
+            width: 40px;
+            height: 3px;
+            background-color: var(--primary-color);
+            bottom: 0;
+            left: 0;
+        }
+        
+        .footer-links li {
+            margin-bottom: 10px;
+        }
+        
+        .footer-links a {
+            transition: var(--transition);
+            color: #ddd;
+        }
+        
+        .footer-links a:hover {
+            color: var(--primary-color);
+            padding-left: 5px;
+        }
+        
+        .contact-info li {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 15px;
+            color: #ddd;
+        }
+        
+        .contact-info i {
+            margin-right: 10px;
+            color: var(--primary-color);
+            margin-top: 5px;
+        }
+        
+        .copyright {
+            text-align: center;
+            padding-top: 20px;
+            border-top: 1px solid #444;
+            color: #aaa;
+            font-size: 0.9rem;
+        }
+        
+        /* Trang con */
+        .page-header {
+            background-color: var(--primary-color);
+            color: white;
+            padding: 60px 0;
+            text-align: center;
+        }
+        
+        .page-header h1 {
+            font-size: 2.5rem;
+            margin-bottom: 15px;
+        }
+        
+        .page-content {
+            padding: 60px 0;
+        }
+        
+        .article-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+            gap: 30px;
+        }
+        
+        .article-card {
+            background-color: white;
+            border-radius: 8px;
+            padding: 25px;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+        }
+        
+        .article-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .article-card h3 {
+            color: var(--primary-color);
+            margin-bottom: 15px;
+            padding-bottom: 10px;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .law-list, .science-list {
+            padding-left: 20px;
+        }
+        
+        .law-list li, .science-list li {
+            margin-bottom: 10px;
+            position: relative;
+            padding-left: 20px;
+        }
+        
+        .law-list li::before, .science-list li::before {
+            content: '•';
+            color: var(--primary-color);
+            font-size: 1.5rem;
+            position: absolute;
+            left: 0;
+            top: -5px;
+        }
+        
+        .video-list {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+        
+        .video-item {
+            display: flex;
+            gap: 20px;
+            background-color: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+        }
+        
+        .video-item-thumbnail {
+            width: 200px;
+            height: 150px;
+            flex-shrink: 0;
+            overflow: hidden;
+        }
+        
+        .video-item-thumbnail img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+        }
+        
+        .video-item-content {
+            padding: 20px;
+            flex-grow: 1;
+        }
+        
+        /* Responsive Design */
+        @media (max-width: 992px) {
+            .hero h2 {
+                font-size: 2.2rem;
+            }
+            
+            nav ul li {
+                margin-left: 15px;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .mobile-menu-btn {
+                display: block;
+            }
+            
+            nav {
+                position: fixed;
+                top: 0;
+                right: -100%;
+                width: 250px;
+                height: 100vh;
+                background-color: white;
+                box-shadow: -5px 0 15px rgba(0, 0, 0, 0.1);
+                transition: var(--transition);
+                z-index: 1001;
+                padding-top: 80px;
+            }
+            
+            nav.active {
+                right: 0;
+            }
+            
+            nav ul {
+                flex-direction: column;
+                padding: 0 20px;
+            }
+            
+            nav ul li {
+                margin: 0 0 20px 0;
+            }
+            
+            .header-content {
+                justify-content: space-between;
+            }
+            
+            .hero h2 {
+                font-size: 1.8rem;
+            }
+            
+            .hero p {
+                font-size: 1rem;
+            }
+            
+            .video-item {
+                flex-direction: column;
+            }
+            
+            .video-item-thumbnail {
+                width: 100%;
+                height: 200px;
+            }
+            
+            .video-modal .modal-content {
+                width: 95%;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .hero {
+                padding: 70px 0;
+            }
+            
+            .main-content {
+                padding: 50px 0;
+            }
+            
+            .section-title {
+                font-size: 1.5rem;
+            }
+            
+            .page-header h1 {
+                font-size: 2rem;
+            }
+            
+            .video-thumbnail {
+                height: 160px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="header-top">
+            <div class="container">
+                <div class="header-top-text">Thực hiện văn hóa giao thông - Vì sự an toàn của chính bạn và cộng đồng</div>
+                <div class="social-icons">
+                    <a href="#"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#"><i class="fab fa-youtube"></i></a>
+                    <a href="#"><i class="fab fa-tiktok"></i></a>
+                    <a href="#"><i class="fab fa-twitter"></i></a>
+                </div>
+            </div>
+        </div>
+        
+        <div class="main-header">
+            <div class="container header-content">
+                <div class="logo-container">
+                    <div class="logo">
+                        <i class="fas fa-traffic-light"></i>
+                    </div>
+                    <div class="logo-text">
+                        <h1>ATGT Việt Nam</h1>
+                        <p>An toàn giao thông - Trách nhiệm mỗi người</p>
+                    </div>
+                </div>
+                
+                <div class="mobile-menu-btn" id="mobileMenuBtn">
+                    <i class="fas fa-bars"></i>
+                </div>
+                
+                <nav id="mainNav">
+                    <ul>
+                        <li><a href="index.html" class="active">Trang chủ</a></li>                        
+                        <li><a href="phap-luat.html">Pháp luật</a></li>
+                        <li><a href="khoa-hoc.html">Khoa học</a></li>                        
+                        <li><a href="bai-viet.html">Bài viết</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <h2>An Toàn Giao Thông - Vì Một Tương Lai An Toàn</h2>
+            <p>Chung tay xây dựng văn hóa giao thông, nâng cao ý thức chấp hành luật giao thông để giảm thiểu tai nạn và bảo vệ tính mạng con người.</p>
+            <a href="#main-content" class="btn">Tìm hiểu ngay</a>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <main class="main-content" id="main-content">
+        <div class="container">
+            <!-- Features Section -->
+            <section class="features-section">
+                <h2 class="section-title">Tại sao an toàn giao thông quan trọng?</h2>
+                <div class="features">
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-heartbeat"></i>
+                        </div>
+                        <h3>Bảo vệ tính mạng</h3>
+                        <p>Tai nạn giao thông là nguyên nhân hàng đầu gây tử vong và thương tích trên toàn thế giới.</p>
+                    </div>
+                    
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-shield-alt"></i>
+                        </div>
+                        <h3>Bảo vệ sức khỏe</h3>
+                        <p>Chấp hành luật giao thông giúp giảm thiểu rủi ro chấn thương, tàn tật do tai nạn.</p>
+                    </div>
+                    
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-home"></i>
+                        </div>
+                        <h3>Bảo vệ hạnh phúc gia đình</h3>
+                        <p>Mỗi tai nạn giao thông đều để lại nỗi đau cho gia đình và người thân.</p>
+                    </div>
+                    
+                    <div class="feature-card">
+                        <div class="feature-icon">
+                            <i class="fas fa-globe-asia"></i>
+                        </div>
+                        <h3>Phát triển xã hội</h3>
+                        <p>An toàn giao thông góp phần phát triển kinh tế - xã hội bền vững.</p>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Latest Posts Section -->
+            <section class="posts-section">
+                <h2 class="section-title">Bài viết mới nhất</h2>
+                <div class="posts-container">
+                    <div class="post-card">
+                        <div class="post-image">
+                            <img src="https://images.unsplash.com/photo-1549317661-bd32c8ce0db2?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" alt="Bài viết về an toàn giao thông">
+                        </div>
+                        <div class="post-content">
+                            <span class="post-category">Bài văn</span>
+                            <h3>Nghị luận về an toàn giao thông học đường</h3>
+                            <p>Bài văn nghị luận phân tích thực trạng và giải pháp nâng cao ý thức an toàn giao thông trong học đường.</p>
+                            <div class="post-meta">
+                                <span><i class="far fa-calendar"></i> 15/10/2023</span>
+                                <span><i class="far fa-eye"></i> 1.2K lượt xem</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="post-card">
+                        <div class="post-image">
+                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcSN3N5dyGx66vqIogLDhFd7kwID7iohyqzsRHG2K-aiyw&s=10" alt="Luật giao thông đường bộ">
+                        </div>
+                        <div class="post-content">
+                            <span class="post-category">Pháp luật</span>
+                            <h3>Những điểm mới trong Luật Giao thông đường bộ 2024</h3>
+                            <p>Tổng hợp các quy định mới về xử phạt vi phạm giao thông, bằng lái xe và an toàn phương tiện.</p>
+                            <div class="post-meta">
+                                <span><i class="far fa-calendar"></i> 10/10/2023</span>
+                                <span><i class="far fa-eye"></i> 2.5K lượt xem</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="post-card">
+                        <div class="post-image">
+                            <img src="https://images.unsplash.com/photo-1555949963-aa79dcee981c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80" alt="Công nghệ an toàn giao thông">
+                        </div>
+                        <div class="post-content">
+                            <span class="post-category">Khoa học</span>
+                            <h3>Công nghệ AI trong giám sát và cảnh báo vi phạm giao thông</h3>
+                            <p>Ứng dụng trí tuệ nhân tạo trong phát hiện vi phạm tốc độ, vượt đèn đỏ và cảnh báo tai nạn.</p>
+                            <div class="post-meta">
+                                <span><i class="far fa-calendar"></i> 05/10/2023</span>
+                                <span><i class="far fa-eye"></i> 1.8K lượt xem</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+            
+            <!-- Video Section - Đã nâng cấp để phát video thực sự -->
+            <section class="videos-section">
+                <h2 class="section-title">Video an toàn giao thông</h2>
+                <div class="videos-container">
+                    <div class="video-card" data-video-title="Hướng dẫn đội mũ bảo hiểm đúng cách">
+                        <div class="video-thumbnail">
+                            <video preload="metadata" playsinline>
+                                <source src="https://cdn.jsdelivr.net/gh/Scode85/Tkb/Các bước đội mũ bảo hiểm đúng cách_720p.mp4" type="video/mp4">
+                                Trình duyệt của bạn không hỗ trợ phát video.
+                            </video>
+                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQUJ0L45rKJOHmyfxRBAABqNT3v8VM3dvqwZWK74o7Gvg&s=10" class="poster">
+                            <div class="play-btn">
+                                <i class="fas fa-play"></i>
+                            </div>
+                            <div class="video-controls">
+                                <button class="play-pause-btn">
+                                    <i class="fas fa-pause"></i>
+                                </button>
+                                <div class="video-progress">
+                                    <div class="video-progress-filled"></div>
+                                </div>
+                                <button class="fullscreen-btn">
+                                    <i class="fas fa-expand"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="video-content">
+                            <h3>Hướng dẫn đội mũ bảo hiểm đúng cách</h3>
+                            <p>Video hướng dẫn chi tiết cách đội mũ bảo hiểm đúng quy cách để bảo vệ an toàn tối đa.</p>
+                            <div class="post-meta">
+                                <span><i class="far fa-clock"></i> 2:30 phút</span>
+                                <span><i class="far fa-eye"></i> 15K lượt xem</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="video-card" data-video-title="Tuyên truyền an toàn giao thông cho học sinh">
+                        <div class="video-thumbnail">
+                            <video preload="metadata" playsinline>
+                                <source src="https://cdn.jsdelivr.net/gh/Scode85/Tkb/Hướng dẫn An toàn Giao thông cho trẻ em_480p.mp4" type="video/mp4">
+                                Trình duyệt của bạn không hỗ trợ phát video.
+                            </video>
+                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQhiz-LWKVFZupnaIVo96zKmQCZZKQO7VecyS-D-UBojQ&s=10" alt="Video tuyên truyền an toàn giao thông" class="poster">
+                            <div class="play-btn">
+                                <i class="fas fa-play"></i>
+                            </div>
+                            <div class="video-controls">
+                                <button class="play-pause-btn">
+                                    <i class="fas fa-pause"></i>
+                                </button>
+                                <div class="video-progress">
+                                    <div class="video-progress-filled"></div>
+                                </div>
+                                <button class="fullscreen-btn">
+                                    <i class="fas fa-expand"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="video-content">
+                            <h3>Tuyên truyền an toàn giao thông cho học sinh</h3>
+                            <p>Chương trình tuyên truyền, giáo dục kiến thức an toàn giao thông cho học sinh các cấp.</p>
+                            <div class="post-meta">
+                                <span><i class="far fa-clock"></i> 4:15 phút</span>
+                                <span><i class="far fa-eye"></i> 22K lượt xem</span>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="video-card" data-video-title="Phân tích nguyên nhân tai nạn giao thông">
+                        <div class="video-thumbnail">
+                            <video preload="metadata" playsinline>
+                                <source src="https://cdn.jsdelivr.net/gh/Scode85/Tkb/Tập 1. Nguyên nhân chủ yếu nguy tai nạn giao thông_360p.mp4" type="video/mp4">
+                                Trình duyệt của bạn không hỗ trợ phát video.
+                            </video>
+                            <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTSCX3l14PxF-TdIcLdb2LLkPGo14obSCfiS6Fc8FnNEg&s=10" class="poster">
+                            <div class="play-btn">
+                                <i class="fas fa-play"></i>
+                            </div>
+                            <div class="video-controls">
+                                <button class="play-pause-btn">
+                                    <i class="fas fa-pause"></i>
+                                </button>
+                                <div class="video-progress">
+                                    <div class="video-progress-filled"></div>
+                                </div>
+                                <button class="fullscreen-btn">
+                                    <i class="fas fa-expand"></i>
+                                </button>
+                            </div>
+                        </div>
+                        <div class="video-content">
+                            <h3>Phân tích nguyên nhân tai nạn giao thông</h3>
+                            <p>Phân tích các nguyên nhân chính dẫn đến tai nạn giao thông và cách phòng tránh.</p>
+                            <div class="post-meta">
+                                <span><i class="far fa-clock"></i> 3:45 phút</span>
+                                <span><i class="far fa-eye"></i> 18K lượt xem</span>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <!-- Video Modal -->
+    <div class="video-modal" id="videoModal">
+        <div class="modal-content">
+            <button class="modal-close" id="modalClose">
+                <i class="fas fa-times"></i>
+            </button>
+            <video class="modal-video" controls id="modalVideo">
+                <source src="" type="video/mp4">
+                Trình duyệt của bạn không hỗ trợ phát video.
+            </video>
+            <div class="modal-video-title" id="modalVideoTitle"></div>
+        </div>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>Về chúng tôi</h3>
+                    <p>Trang web cung cấp thông tin, kiến thức về an toàn giao thông, nhằm nâng cao ý thức và trách nhiệm của mỗi người khi tham gia giao thông.</p>
+                    <div class="social-icons" style="margin-top: 20px;">
+                        <a href="#"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#"><i class="fab fa-youtube"></i></a>
+                        <a href="#"><i class="fab fa-tiktok"></i></a>
+                        <a href="#"><i class="fab fa-twitter"></i></a>
+                    </div>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Liên kết nhanh</h3>
+                    <ul class="footer-links">
+                        <li><a href="index.html">Trang chủ</a></li>
+                        <li><a href="bai-viet.html">Bài viết về ATGT</a></li>
+                        <li><a href="phap-luat.html">Luật giao thông đường bộ</a></li>
+                        <li><a href="khoa-hoc.html">Công nghệ ATGT</a></li>                        
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Liên hệ</h3>
+                    <ul class="contact-info">
+                        <li><i class="fas fa-map-marker-alt"></i> Tổ2 -12A3</li>
+                        <li><i class="fas fa-phone"></i> 0987654321</li>
+                        <li><i class="fas fa-envelope"></i> ....</li>
+                        <li><i class="fas fa-clock"></i> Thứ 2 - Thứ 6: 8:00 - 17:00</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                <p>&copy; 2026 An Toàn Giao Thông Việt Nam. Tất cả các quyền được bảo lưu.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script>
+        // Mobile menu toggle
+        const mobileMenuBtn = document.getElementById('mobileMenuBtn');
+        const mainNav = document.getElementById('mainNav');
+        
+        mobileMenuBtn.addEventListener('click', () => {
+            mainNav.classList.toggle('active');
+        });
+        
+        // Close mobile menu when clicking on a link
+        const navLinks = document.querySelectorAll('nav a');
+        navLinks.forEach(link => {
+            link.addEventListener('click', () => {
+                mainNav.classList.remove('active');
+            });
+        });
+        
+        // Highlight active page in navigation
+        const currentPage = window.location.pathname.split('/').pop();
+        navLinks.forEach(link => {
+            const linkPage = link.getAttribute('href');
+            if (linkPage === currentPage || (currentPage === '' && linkPage === 'index.html')) {
+                link.classList.add('active');
+            } else {
+                link.classList.remove('active');
+            }
+        });
+        
+        // Video Player Functionality
+        document.addEventListener('DOMContentLoaded', () => {
+            const videoCards = document.querySelectorAll('.video-card');
+            const videoModal = document.getElementById('videoModal');
+            const modalVideo = document.getElementById('modalVideo');
+            const modalClose = document.getElementById('modalClose');
+            const modalVideoTitle = document.getElementById('modalVideoTitle');
+            
+            // Initialize all video cards
+            videoCards.forEach(card => {
+                const videoThumbnail = card.querySelector('.video-thumbnail');
+                const video = card.querySelector('video');
+                const poster = card.querySelector('.poster');
+                const playBtn = card.querySelector('.play-btn');
+                const playPauseBtn = card.querySelector('.play-pause-btn');
+                const fullscreenBtn = card.querySelector('.fullscreen-btn');
+                const progress = card.querySelector('.video-progress');
+                const progressFilled = card.querySelector('.video-progress-filled');
+                const videoTitle = card.getAttribute('data-video-title') || card.querySelector('h3').textContent;
+                
+                // Play button click - play video in thumbnail
+                playBtn.addEventListener('click', (e) => {
+                    e.stopPropagation();
+                    
+                    if (video.paused) {
+                        video.play();
+                        playBtn.classList.add('playing');
+                        poster.classList.add('hidden');
+                    } else {
+                        video.pause();
+                        playBtn.classList.remove('playing');
+                    }
+                });
+                
+                // Video click - open in modal
+                videoThumbnail.addEventListener('click', (e) => {
+                    if (e.target !== playBtn && e.target !== playBtn.querySelector('i') && 
+                        e.target !== playPauseBtn && e.target !== playPauseBtn.querySelector('i') &&
+                        e.target !== fullscreenBtn && e.target !== fullscreenBtn.querySelector('i') &&
+                        e.target !== progress && e.target !== progressFilled) {
+                        
+                        // Set modal video source
+                        const videoSrc = video.querySelector('source').getAttribute('src');
+                        modalVideo.querySelector('source').setAttribute('src', videoSrc);
+                        modalVideo.load();
+                        modalVideoTitle.textContent = videoTitle;
+                        
+                        // Show modal
+                        videoModal.classList.add('active');
+                        document.body.style.overflow = 'hidden';
+                    }
+                });
+                
+                // Play/Pause button in controls
+                playPauseBtn.addEventListener('click', (e) => {
+                    e.stopPropagation();
+                    
+                    if (video.paused) {
+                        video.play();
+                        playPauseBtn.innerHTML = '<i class="fas fa-pause"></i>';
+                        playBtn.classList.add('playing');
+                        poster.classList.add('hidden');
+                    } else {
+                        video.pause();
+                        playPauseBtn.innerHTML = '<i class="fas fa-play"></i>';
+                        playBtn.classList.remove('playing');
+                    }
+                });
+                
+                // Fullscreen button
+                fullscreenBtn.addEventListener('click', (e) => {
+                    e.stopPropagation();
+                    
+                    // Open video in modal for better fullscreen experience
+                    const videoSrc = video.querySelector('source').getAttribute('src');
+                    modalVideo.querySelector('source').setAttribute('src', videoSrc);
+                    modalVideo.load();
+                    modalVideoTitle.textContent = videoTitle;
+                    
+                    // Show modal
+                    videoModal.classList.add('active');
+                    document.body.style.overflow = 'hidden';
+                    
+                    // Play video in modal
+                    modalVideo.play();
+                });
+                
+                // Update progress bar as video plays
+                video.addEventListener('timeupdate', () => {
+                    const percent = (video.currentTime / video.duration) * 100;
+                    progressFilled.style.width = `${percent}%`;
+                    
+                    // Update play/pause button icon
+                    if (video.paused) {
+                        playPauseBtn.innerHTML = '<i class="fas fa-play"></i>';
+                    } else {
+                        playPauseBtn.innerHTML = '<i class="fas fa-pause"></i>';
+                    }
+                });
+                
+                // Click on progress bar to seek
+                progress.addEventListener('click', (e) => {
+                    e.stopPropagation();
+                    const pos = (e.offsetX / progress.offsetWidth) * video.duration;
+                    video.currentTime = pos;
+                });
+                
+                // When video ends, reset play button
+                video.addEventListener('ended', () => {
+                    playBtn.classList.remove('playing');
+                    poster.classList.remove('hidden');
+                    playPauseBtn.innerHTML = '<i class="fas fa-play"></i>';
+                    progressFilled.style.width = '0%';
+                });
+                
+                // Show controls when hovering over video
+                videoThumbnail.addEventListener('mouseenter', () => {
+                    const controls = videoThumbnail.querySelector('.video-controls');
+                    controls.style.opacity = '1';
+                });
+                
+                videoThumbnail.addEventListener('mouseleave', () => {
+                    const controls = videoThumbnail.querySelector('.video-controls');
+                    // Only hide if video is not playing
+                    if (video.paused) {
+                        controls.style.opacity = '0';
+                    }
+                });
+            });
+            
+            // Modal functionality
+            modalClose.addEventListener('click', () => {
+                videoModal.classList.remove('active');
+                modalVideo.pause();
+                document.body.style.overflow = 'auto';
+            });
+            
+            // Close modal when clicking outside the video
+            videoModal.addEventListener('click', (e) => {
+                if (e.target === videoModal) {
+                    videoModal.classList.remove('active');
+                    modalVideo.pause();
+                    document.body.style.overflow = 'auto';
+                }
+            });
+            
+            // Close modal with Escape key
+            document.addEventListener('keydown', (e) => {
+                if (e.key === 'Escape' && videoModal.classList.contains('active')) {
+                    videoModal.classList.remove('active');
+                    modalVideo.pause();
+                    document.body.style.overflow = 'auto';
+                }
+            });
+            
+            // Add click handlers for post cards
+            const postCards = document.querySelectorAll('.post-card');
+            postCards.forEach(card => {
+                card.addEventListener('click', () => {
+                    const category = card.querySelector('.post-category').textContent;
+                    const title = card.querySelector('h3').textContent;
+                    
+                    // Redirect to appropriate page based on category
+                    if (category === 'Bài văn') {
+                        window.location.href = 'bai-van.html';
+                    } else if (category === 'Pháp luật') {
+                        window.location.href = 'phap-luat.html';
+                    } else if (category === 'Khoa học') {
+                        window.location.href = 'khoa-hoc.html';
+                    }
+                });
+            });
+            
+            // Lazy load videos for better performance
+            const observerOptions = {
+                root: null,
+                rootMargin: '0px',
+                threshold: 0.1
+            };
+            
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        const video = entry.target.querySelector('video');
+                        if (video) {
+                            // Preload video when it's visible
+                            video.preload = 'auto';
+                            observer.unobserve(entry.target);
+                        }
+                    }
+                });
+            }, observerOptions);
+            
+            videoCards.forEach(card => {
+                observer.observe(card);
+            });
+        });
+    </script>
+</body>
+</html>
